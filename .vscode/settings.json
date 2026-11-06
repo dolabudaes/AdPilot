@@ -1,0 +1,29 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    ".next": true,
+    "apps/web/.next": true,
+    "node_modules": true,
+    "apps/web/node_modules": true,
+    "tsconfig.tsbuildinfo": true,
+    "apps/web/tsconfig.tsbuildinfo": true,
+    "data/*.db-shm": true,
+    "data/*.db-wal": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.venv": true,
+    "data/pcb_dataset_final.tsv": true,
+    "data/processed/**": true,
+    "evaluation/results/**": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.venv/**": true,
+    "data/pcb_dataset_final.tsv": true
+  }
+}

@@ -1,0 +1,1 @@
+export { validateStrategy } from "./validateStrategy";

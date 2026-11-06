@@ -1,0 +1,23 @@
+/node_modules
+/apps/*/node_modules
+/.next
+/apps/web/.next
+/data
+/apps/web/data
+/.env.local
+/.venv
+/tests
+**/__pycache__/
+*.py[cod]
+.DS_Store
+/pcb_dataset_final.tsv
+/data/pcb_dataset_final.tsv
+# Local/dev caches
+.verify-shots/
+.superpowers/
+/tsconfig.tsbuildinfo
+/apps/web/tsconfig.tsbuildinfo
+
+# Local DB sidecar files (data/ itself already ignored)
+/data/**/*.db-shm
+/data/**/*.db-wal

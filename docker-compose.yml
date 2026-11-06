@@ -1,0 +1,39 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      ADPILOT_REPO_ROOT: /srv/adpilot
+      ADPILOT_DATA_DIR: /srv/adpilot/data
+      SQLITE_PATH: /srv/adpilot/data/adpilot.db
+      LLM_PROVIDER: mock
+    volumes:
+      - ./data:/srv/adpilot/data
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - "0.0.0.0"
+      - --port
+      - "8000"
+      - --app-dir
+      - apps/api
+
+  # Optional future stack (does not replace SQLite by default):
+  #
+  # postgres:
+  #   image: pgvector/pgvector:pg16
+  #   profiles: ["postgres"]
+  #   environment:
+  #     POSTGRES_PASSWORD: adpilot
+  #   ports:
+  #     - "5432:5432"
+  #
+  # redis:
+  #   image: redis:7-alpine
+  #   profiles: ["redis"]
+  #   ports:
+  #     - "6379:6379"
